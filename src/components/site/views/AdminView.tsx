@@ -18,7 +18,7 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { PlaceholderNote, useDocumentTitle, GoldDivider } from "@/components/site/bits";
+import { PlaceholderNote, useDocumentTitle } from "@/components/site/bits";
 import type { SiteContent } from "@/lib/types";
 import {
   fetchContentJson,
@@ -381,6 +381,7 @@ function FieldInput({
         value={String(value || "")}
         onChange={(e) => onChange(e.target.value)}
         rows={field.rows || 4}
+        className="resize-none"
       />
     );
   }
@@ -526,12 +527,9 @@ function EntityCard({
         </div>
       </div>
       {open ? (
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <div className="mt-4 grid gap-4">
           {fields.map((f) => (
-            <div
-              key={f.key}
-              className={f.type === "textarea" || f.key === "description" ? "sm:col-span-2" : ""}
-            >
+            <div key={f.key}>
               <FieldRow
                 field={f}
                 value={item[f.key]}
@@ -618,13 +616,13 @@ function SettingsTab({
   return (
     <div>
       <h2 className="font-display text-2xl text-graphite">Настройки сайта</h2>
-      <div className="mt-4 flex flex-wrap gap-1 border-b border-line">
+      <div className="mt-4 flex gap-1 overflow-x-auto border-b border-line [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {SETTINGS_GROUPS.map((g) => (
           <button
             key={g.id}
             onClick={() => setActiveGroup(g.id)}
             className={
-              "px-3 py-2 text-sm border-b-2 -mb-px transition-colors " +
+              "px-3 py-2 text-sm border-b-2 -mb-px whitespace-nowrap shrink-0 transition-colors " +
               (activeGroup === g.id
                 ? "border-wine text-wine font-medium"
                 : "border-transparent text-graphite-soft hover:text-graphite")
@@ -634,14 +632,11 @@ function SettingsTab({
           </button>
         ))}
       </div>
-      <div className="mt-6 grid gap-5 sm:grid-cols-2">
+      <div className="mt-6 grid gap-5">
         {SETTINGS_GROUPS.find((g) => g.id === activeGroup)?.fields.map((f) => {
           const group = content[activeGroup as keyof SiteContent] as Record<string, unknown>;
           return (
-            <div
-              key={f.key}
-              className={f.type === "textarea" ? "sm:col-span-2" : ""}
-            >
+            <div key={f.key}>
               <FieldRow
                 field={f}
                 value={group?.[f.key]}
@@ -691,7 +686,7 @@ function RawJsonTab({
           }
         }}
         rows={24}
-        className="mt-4 font-mono text-xs"
+        className="mt-4 resize-y font-mono text-xs"
       />
       {error ? (
         <p className="mt-2 text-sm text-red-700">JSON невалиден: {error}</p>
@@ -757,6 +752,10 @@ export function AdminView() {
 
   const save = useCallback(async () => {
     if (!auth || !content) return;
+    if (!dirty) {
+      toast({ title: "Нет изменений", description: "Правки не найдены — сохранять нечего." });
+      return;
+    }
     setSaving(true);
     try {
       const serialized = JSON.stringify(content, null, 2);
@@ -872,14 +871,14 @@ export function AdminView() {
 
   const tabs = [
     { id: "settings", label: "Настройки" },
-    { id: "materials", label: ENTITY_LABELS.materials },
-    { id: "trainings", label: ENTITY_LABELS.trainings },
-    { id: "thetaPrograms", label: ENTITY_LABELS.thetaPrograms },
-    { id: "schedule", label: ENTITY_LABELS.schedule },
-    { id: "tariffs", label: ENTITY_LABELS.tariffs },
-    { id: "freeLessons", label: ENTITY_LABELS.freeLessons },
-    { id: "seasons", label: ENTITY_LABELS.seasons },
-    { id: "reviews", label: ENTITY_LABELS.reviews },
+    { id: "materials", label: "Материалы" },
+    { id: "trainings", label: "Тренинги" },
+    { id: "thetaPrograms", label: "Тета-программы" },
+    { id: "schedule", label: "Расписание" },
+    { id: "tariffs", label: "Тарифы" },
+    { id: "freeLessons", label: "Уроки" },
+    { id: "seasons", label: "Сезоны" },
+    { id: "reviews", label: "Отзывы" },
     { id: "raw", label: "Сырой JSON" },
   ];
 
@@ -887,7 +886,7 @@ export function AdminView() {
     <div className="min-h-screen bg-milk">
       {/* Sticky шапка */}
       <header className="sticky top-0 z-30 border-b border-line bg-cream/95 backdrop-blur">
-        <div className="mx-auto max-w-7xl px-5 py-3 flex flex-wrap items-center gap-3">
+        <div className="mx-auto max-w-7xl px-5 py-3 flex flex-wrap items-center gap-2 sm:gap-3">
           <h1 className="font-display text-xl text-graphite flex-1">Панель управления</h1>
           {dirty ? (
             <span className="text-xs text-gold">● несохранённые правки</span>
@@ -907,7 +906,7 @@ export function AdminView() {
           <Button
             type="button"
             onClick={save}
-            disabled={saving || !dirty}
+            disabled={saving}
             className="h-10 bg-wine hover:bg-wine-deep text-[#fdf9f3]"
           >
             {saving ? (
@@ -925,13 +924,13 @@ export function AdminView() {
 
       {/* Tabs */}
       <nav className="border-b border-line bg-white/60 sticky top-[57px] z-20">
-        <div className="mx-auto max-w-7xl px-5 flex flex-wrap gap-1">
+        <div className="mx-auto max-w-7xl px-5 flex gap-1 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {tabs.map((t) => (
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id)}
               className={
-                "px-3 py-2.5 text-sm border-b-2 -mb-px transition-colors " +
+                "px-3 py-2.5 text-sm border-b-2 -mb-px whitespace-nowrap shrink-0 transition-colors " +
                 (activeTab === t.id
                   ? "border-wine text-wine font-medium"
                   : "border-transparent text-graphite-soft hover:text-graphite")
@@ -988,8 +987,7 @@ export function AdminView() {
         ) : null}
       </main>
 
-      <GoldDivider className="my-4" />
-      <PlaceholderNote className="mx-auto max-w-7xl px-5 pb-12">
+      <PlaceholderNote className="mx-auto max-w-7xl px-5 pb-16">
         После «Сохранить» GitHub Actions пересоберёт сайт за 1–2 минуты. Обновите страницу сайта с
         зажатым Shift (Ctrl+Shift+R или Cmd+Shift+R), чтобы увидеть изменения. Все правки
         фиксируются в истории коммитов репозитория — всегда можно откатить.

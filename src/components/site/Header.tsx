@@ -54,7 +54,7 @@ export function Header() {
           aria-label="На главную"
         >
           <Monogram />
-          <span className="hidden flex-col leading-tight sm:flex">
+          <span className="hidden flex-col leading-tight gap-0.5 sm:flex">
             <span className="font-display text-lg text-graphite transition-colors group-hover:text-wine">
               Елена Макарова
             </span>
@@ -65,14 +65,14 @@ export function Header() {
         </button>
 
         {/* Десктопная навигация */}
-        <nav className="hidden items-center gap-1 xl:flex" aria-label="Основная навигация">
+        <nav className="hidden items-center gap-0.5 overflow-x-auto xl:flex [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Основная навигация">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.path}
               type="button"
               onClick={() => go(item.path)}
               className={cn(
-                "rounded-full px-3.5 py-2 text-[13.5px] tracking-wide transition-colors",
+                "rounded-full px-2.5 py-2 text-[13.5px] tracking-wide whitespace-nowrap shrink-0 transition-colors",
                 isActive(item.path)
                   ? "bg-powder/70 font-semibold text-wine"
                   : "text-graphite-soft hover:bg-cream hover:text-wine"
