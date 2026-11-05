@@ -1,6 +1,6 @@
 {
   "hero": {
-    "name": "Елена Макарова Тета",
+    "name": "Елена Макарова ",
     "title": "Любовь исцеляет всё",
     "subtitle": "Глубокие трансформационные практики",
     "lead": "Пространство для внутренней трансформации, возвращения к себе и раскрытия новых возможностей",
@@ -163,7 +163,7 @@
       "title": "Знакомство с методикой",
       "description": "Короткий ознакомительный урок: что такое Тета-хилинг и как строится обучение у Елены.",
       "coverUrl": "/images/lesson-intro.jpg",
-      "videoUrl": "",
+      "videoUrl": "https://rutube.ru/video/ed3ba0dd455118a01995935cc2613904/",
       "sortOrder": 0,
       "isPublished": true
     },
@@ -172,7 +172,7 @@
       "title": "Первые практики",
       "description": "Ознакомительный урок о первых практиках методики и о том, с чего начинается путь.",
       "coverUrl": "/images/lesson-dig.jpg",
-      "videoUrl": "",
+      "videoUrl": "https://rutube.ru/video/ad10e8c6ff1f0d5cf9b9b267b22b745c/",
       "sortOrder": 1,
       "isPublished": true
     }
