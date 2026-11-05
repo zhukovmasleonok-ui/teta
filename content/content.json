@@ -132,9 +132,9 @@
     {
       "id": "cmvqnxcvd0007nd5kuxo1fmxe",
       "name": "Базовый",
-      "priceText": "Уточняется",
+      "priceText": "1500р",
       "features": "Участие в обучении\nМатериалы курса\nДоступ к записям занятий",
-      "isFeatured": false,
+      "isFeatured": true,
       "sortOrder": 0,
       "isPublished": true
     },
