@@ -12,10 +12,12 @@ import { ThetaView } from "@/components/site/views/ThetaView";
 import { SeasonView } from "@/components/site/views/SeasonView";
 import { ReviewsView } from "@/components/site/views/ReviewsView";
 import { ContactsView } from "@/components/site/views/ContactsView";
+import { AdminView } from "@/components/site/views/AdminView";
 import type { SiteContent } from "@/lib/types";
 
 function Router() {
   const { route } = useSite();
+
   const view = useMemo(() => {
     if (route === "/" || route === "") return <HomeView />;
     if (route === "/start") return <StartView />;
@@ -28,6 +30,7 @@ function Router() {
     if (route === "/season") return <SeasonView />;
     if (route === "/reviews") return <ReviewsView />;
     if (route === "/contacts") return <ContactsView />;
+    if (route === "/admin") return <AdminView />;
     return <HomeView />;
   }, [route]);
 
@@ -35,7 +38,7 @@ function Router() {
     <div className="flex min-h-screen flex-col bg-milk">
       <Header />
       <main className="flex-1">{view}</main>
-      <Footer />
+      {route !== "/admin" ? <Footer /> : null}
     </div>
   );
 }

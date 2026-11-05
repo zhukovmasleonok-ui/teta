@@ -5,7 +5,6 @@ import { SectionHeading, WineButton } from "@/components/site/bits";
 import { useSite } from "@/lib/site-context";
 
 // Публичный канал-источник постов для официального встраиваемого виджета Telegram.
-// Контактный хэндл «написать Елене» (@Elenavolshebstvo) задаётся в content.json → contacts.
 const TELEGRAM_FEED_CHANNEL = "Elena_volshebstvo";
 
 export function TelegramSection({ compact = false }: { compact?: boolean }) {
