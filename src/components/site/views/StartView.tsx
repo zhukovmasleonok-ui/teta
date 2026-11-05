@@ -36,7 +36,7 @@ export function StartView() {
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="absolute -right-32 top-0 h-[380px] w-[380px] rounded-full bg-powder/50 blur-3xl" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="relative mx-auto max-w-[1440px] px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
               <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-champagne/50 bg-white/60 px-4 py-2">
@@ -61,7 +61,7 @@ export function StartView() {
 
       {/* Материалы */}
       <section className="pb-20 sm:pb-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           <div className="grid gap-7 md:grid-cols-2">
             {content.materials.map((m, i) => (
               <Reveal key={m.id} delay={0.07 * i}>
@@ -116,7 +116,7 @@ export function StartView() {
 
       {/* Отзывы на материалы */}
       <section className="bg-cream-gradient py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Впечатления"
             title="Отзывы о бесплатных практиках"

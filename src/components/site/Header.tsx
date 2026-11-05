@@ -45,7 +45,7 @@ export function Header() {
           : "bg-transparent"
       )}
     >
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
+      <div className="mx-auto flex h-[72px] max-w-[1440px] items-center gap-4 px-5 sm:px-8">
         {/* Логотип */}
         <button
           type="button"
@@ -65,7 +65,7 @@ export function Header() {
         </button>
 
         {/* Десктопная навигация */}
-        <nav className="hidden items-center gap-0.5 overflow-x-auto xl:flex [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Основная навигация">
+        <nav className="hidden items-center gap-0.5 overflow-x-auto ml-6 xl:flex [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Основная навигация">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.path}
@@ -83,7 +83,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2.5 ml-auto">
           {/* CTA */}
           <Button
             onClick={() => go("/start")}

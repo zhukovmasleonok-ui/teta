@@ -68,7 +68,7 @@ export function SeasonView() {
 
       {/* Архив */}
       <section className="bg-cream-gradient py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Архив"
             title="Предыдущие темы"
@@ -143,7 +143,7 @@ function CurrentSeason({ season }: { season: SeasonMethod | null }) {
 
   return (
     <section className="pb-20 sm:pb-24">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
         <Reveal>
           <article className="overflow-hidden rounded-[2.25rem] border border-line bg-white/75 shadow-soft">
             {/* Обложка */}

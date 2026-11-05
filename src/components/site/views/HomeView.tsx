@@ -57,7 +57,7 @@ function Hero() {
         <div className="absolute top-1/3 left-1/2 h-[300px] w-[300px] rounded-full bg-champagne/15 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-16 pt-10 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:pb-24 lg:pt-16">
+      <div className="relative mx-auto grid max-w-[1440px] gap-10 px-5 pb-14 pt-8 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:pb-16 lg:pt-12">
         <div>
           <Reveal>
             <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-champagne/50 bg-white/60 px-4 py-2 backdrop-blur">
@@ -139,8 +139,8 @@ function AboutSection() {
   const paragraphs = a.paragraphs.split("\n").filter(Boolean);
 
   return (
-    <section id="about" className="bg-cream-gradient py-20 sm:py-28">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
+    <section id="about" className="bg-cream-gradient py-20 sm:py-24 lg:py-24">
+      <div className="mx-auto grid max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
         <Reveal className="relative order-2 lg:order-1">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px]">
             <div className="absolute -left-4 -top-4 h-full w-full rounded-[2rem] border border-champagne/50" aria-hidden />
@@ -206,8 +206,8 @@ function FreeStartSection() {
   const materials = content.materials.slice(0, 3);
 
   return (
-    <section id="start" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="start" className="py-20 sm:py-24 lg:py-24">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
         <SectionHeading
           eyebrow="С чего начать"
           title="Бесплатные материалы для первого шага"
@@ -279,8 +279,8 @@ function TrainingsSection() {
   const trainings = content.trainings.slice(0, 3);
 
   return (
-    <section id="trainings" className="bg-cream-gradient py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="trainings" className="bg-cream-gradient py-20 sm:py-24 lg:py-24">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
         <SectionHeading
           eyebrow="Тренинги в записи"
           title="Трансформационные тренинги"
@@ -344,13 +344,13 @@ function ThetaSection() {
   const { content, navigate } = useSite();
 
   return (
-    <section id="thetahealing" className="relative overflow-hidden bg-wine-gradient py-20 text-[#f8efe4] sm:py-28">
+    <section id="thetahealing" className="relative overflow-hidden bg-wine-gradient py-20 text-[#f8efe4] sm:py-24 lg:py-24">
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-10 h-80 w-80 rounded-full bg-champagne/10 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-powder/10 blur-3xl" />
       </div>
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+      <div className="relative mx-auto max-w-[1440px] px-5 sm:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
           <div>
             <SectionHeading
               eyebrow="Обучение методике"
@@ -422,8 +422,8 @@ function SeasonSection() {
   if (!season) return null;
 
   return (
-    <section id="season" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="season" className="py-20 sm:py-24 lg:py-24">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
         <SectionHeading
           eyebrow="Обновляемый раздел"
           title="Методика сезона"
@@ -473,8 +473,8 @@ function SeasonSection() {
 function ReviewsSection() {
   const { navigate } = useSite();
   return (
-    <section id="reviews" className="bg-cream-gradient py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="reviews" className="bg-cream-gradient py-20 sm:py-24 lg:py-24">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
         <SectionHeading
           eyebrow="Отзывы"
           title="Опыт учеников и клиентов"
@@ -497,7 +497,7 @@ function InviteSection() {
   const inv = content.invite;
 
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28">
+    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-24">
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-powder/45 blur-3xl" />
       </div>
@@ -531,7 +531,7 @@ function ContactsSection() {
 
   return (
     <section id="contacts" className="bg-cream-gradient py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
         <SectionHeading
           eyebrow="Контакты"
           title="Самый тёплый способ связи — Telegram"

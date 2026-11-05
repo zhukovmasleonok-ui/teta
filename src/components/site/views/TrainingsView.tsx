@@ -21,7 +21,7 @@ export function TrainingsView() {
           <div className="absolute -left-32 top-0 h-[380px] w-[380px] rounded-full bg-cream-deep/70 blur-3xl" />
           <div className="absolute -right-24 bottom-0 h-[300px] w-[300px] rounded-full bg-powder/50 blur-3xl" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-5 text-center sm:px-8">
+        <div className="relative mx-auto max-w-[1440px] px-5 text-center sm:px-8">
           <Reveal>
             <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-champagne/50 bg-white/60 px-4 py-2">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
@@ -42,7 +42,7 @@ export function TrainingsView() {
       </section>
 
       <section className="pb-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
             {content.trainings.map((t, i) => (
               <Reveal key={t.id} delay={0.08 * i}>

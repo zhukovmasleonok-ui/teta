@@ -12,8 +12,8 @@ export function TelegramSection({ compact = false }: { compact?: boolean }) {
   const feedUrl = `https://t.me/${TELEGRAM_FEED_CHANNEL}?embed=1&userpic=false`;
 
   return (
-    <section id="telegram" className={compact ? "py-12" : "py-20 sm:py-28"}>
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="telegram" className={compact ? "py-12" : "py-20 sm:py-24 lg:py-24"}>
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
         <div className="flex flex-col items-center gap-6">
           <SectionHeading
             eyebrow="Из Telegram"

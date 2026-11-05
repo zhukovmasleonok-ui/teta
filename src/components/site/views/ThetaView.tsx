@@ -40,7 +40,7 @@ export function ThetaView() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-plum/72 via-plum/30 to-plum/10" />
           <div className="absolute inset-0 flex items-end">
-            <div className="mx-auto w-full max-w-7xl px-5 pb-12 sm:px-8 sm:pb-16">
+            <div className="mx-auto w-full max-w-[1440px] px-5 pb-12 sm:px-8 sm:pb-16">
               <Reveal>
                 <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/10 px-4 py-2 backdrop-blur">
                   <Sparkles className="h-3.5 w-3.5 text-champagne" />
@@ -59,8 +59,8 @@ export function ThetaView() {
 
       {/* Методика и подход */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-16">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-12">
             <Reveal className="lg:sticky lg:top-24">
               <VideoEmbed
                 url={t.videoUrl}
@@ -107,7 +107,7 @@ export function ThetaView() {
 
       {/* Кому подойдёт + Что изучите */}
       <section className="bg-cream-gradient py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-[1440px] gap-10 px-5 sm:px-8 lg:grid-cols-2">
           <Reveal>
             <div className="h-full rounded-[2rem] border border-line bg-white/70 p-8 shadow-softer sm:p-10">
               <div className="flex items-center gap-3">
@@ -159,7 +159,7 @@ export function ThetaView() {
 
       {/* Список программ */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Обучающие программы"
             title="Линия обучения"
@@ -186,7 +186,7 @@ export function ThetaView() {
 
       {/* Расписание */}
       <section className="bg-cream-gradient py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Расписание"
             title="Ближайшие обучающие потоки"
@@ -218,7 +218,7 @@ export function ThetaView() {
 
       {/* Тарифы */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Тарифы"
             title="Выберите глубину погружения"
@@ -301,7 +301,7 @@ export function ThetaView() {
 
       {/* Бесплатные ознакомительные уроки */}
       <section className="bg-cream-gradient py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Попробуйте бесплатно"
             title="Ознакомительные уроки"
@@ -350,7 +350,7 @@ export function ThetaView() {
 
       {/* Отзывы учеников + FAQ */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           <Reveal>
             <h2 className="text-center font-display text-2xl text-graphite sm:text-3xl">
               Отзывы учеников об обучении

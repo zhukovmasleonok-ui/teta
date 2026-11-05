@@ -45,7 +45,7 @@ export function ReviewsView() {
       </section>
 
       <section className="pb-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           {/* Категории */}
           <Reveal>
             <div className="flex flex-wrap justify-center gap-2.5">

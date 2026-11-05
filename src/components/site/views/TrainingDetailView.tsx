@@ -79,7 +79,7 @@ export function TrainingDetailView({ slug }: { slug: string }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-plum/70 via-plum/25 to-transparent" />
           <div className="absolute inset-x-0 bottom-0">
-            <div className="mx-auto max-w-7xl px-5 pb-10 sm:px-8 sm:pb-14">
+            <div className="mx-auto max-w-[1440px] px-5 pb-10 sm:px-8 sm:pb-14">
               <Reveal>
                 <Button
                   variant="ghost"
@@ -104,7 +104,7 @@ export function TrainingDetailView({ slug }: { slug: string }) {
 
       {/* Описание + видео */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <div className="mx-auto grid max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div>
             <Reveal>
               <h2 className="font-display text-2xl text-graphite sm:text-3xl">
@@ -240,7 +240,7 @@ export function TrainingDetailView({ slug }: { slug: string }) {
 
       {/* Отзывы о тренинге */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
           <Reveal>
             <h2 className="text-center font-display text-2xl text-graphite sm:text-3xl">
               Отзывы о тренинге
