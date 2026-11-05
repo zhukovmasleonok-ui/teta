@@ -72,8 +72,13 @@ export async function fetchContentJson(
     throw new Error(`GitHub API: ${res.status}`);
   }
   const data = await res.json();
-  // data.content — base64-кодированный JSON
-  const decoded = atob(data.content.replace(/\n/g, ""));
+  // data.content — base64-кодированный JSON (UTF-8).
+  // atob() возвращает строку в Latin-1, поэтому кириллицу нужно
+  // сначала превратить в байты и только потом декодировать как UTF-8,
+  // иначе русский текст превращается в "кракозябры".
+  const bin = atob(data.content.replace(/\n/g, ""));
+  const bytes = Uint8Array.from(bin, (ch) => ch.charCodeAt(0));
+  const decoded = new TextDecoder("utf-8").decode(bytes);
   return { content: decoded, sha: data.sha as string };
 }
 
